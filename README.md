@@ -98,21 +98,15 @@ The existing environment already contains all required packages. It was not rebu
 
 No external API key, database server, CDN, or live network connection is required to run. Chart.js, Lucide icons, and Inter fonts are vendored under `static/`.
 
-## Windows Local Auto Start
-
-The permanent local address is **http://127.0.0.1:5000**. Install the Windows logon task once by running:
-
-```powershell
-.\scripts\install_eduguard_startup.bat
-```
-
-It creates or updates the **EduGuard AI Local Server** Task Scheduler task, which starts Waitress after you sign in. Start it manually with `.\scripts\start_eduguard.bat`; remove the task with `.\scripts\remove_eduguard_startup.bat`. Confirm readiness at **http://127.0.0.1:5000/health**.
-
-The address stays the same, but localhost is available only while this Windows computer is powered on, you are signed in, and the EduGuard server process is running.
-
 ## Local Windows Demo
 
-Use **http://127.0.0.1:5000** for the local demo. It is served by Waitress and can be started manually with `scripts/start_eduguard.bat` or automatically after Windows login with the Task Scheduler installer. The PC must be powered on and the server process must be running.
+Run the local demo manually from PowerShell:
+
+```powershell
+.\venv\Scripts\python.exe app.py
+```
+
+Open **http://127.0.0.1:5000**. The server starts only when you run this command. The PC must be powered on and the process must remain running.
 
 ## Public Demo
 
