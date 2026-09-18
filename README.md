@@ -110,6 +110,14 @@ It creates or updates the **EduGuard AI Local Server** Task Scheduler task, whic
 
 The address stays the same, but localhost is available only while this Windows computer is powered on, you are signed in, and the EduGuard server process is running.
 
+## Local Windows Demo
+
+Use **http://127.0.0.1:5000** for the local demo. It is served by Waitress and can be started manually with `scripts/start_eduguard.bat` or automatically after Windows login with the Task Scheduler installer. The PC must be powered on and the server process must be running.
+
+## Public Demo
+
+The Render public URL will be added here after the first verified deployment. The free web service is independent of the laptop and can be reached from phones or other computers. Render may introduce a cold-start delay after inactivity, and SQLite data on the free service is temporary across restarts, redeploys, and spin-downs.
+
 ## Problem
 
 Academic difficulties can be discovered too late for timely support. Manual monitoring of large cohorts makes it hard for advisors to identify students who need help early.

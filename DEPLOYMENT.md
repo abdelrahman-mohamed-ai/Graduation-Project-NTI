@@ -4,7 +4,7 @@ No deployment or database migration has been performed. Development remains `pyt
 
 ## Render service
 
-Import this repository as a Render Blueprint using `render.yaml`. Include `models/`, `data/raw/`, `data/reference/`, and `artifacts/` with their original trusted files in the repository or provision them securely before startup. The factory resolves these directories from the project root using pathlib; no working-directory or Windows-specific model paths are required. Never load untrusted pickle files. Do not upload the local virtual environment, local database, `.env` or `.session-secret`.
+Import this repository as a Render Blueprint using `render.yaml`. The current Blueprint is deliberately configured for Render's **Free web-service plan**: it has no persistent disk and stores the demo SQLite database at `/tmp/eduguard.db`. Include `models/`, `data/raw/`, `data/reference/`, and `artifacts/` with their original trusted files in the repository or provision them securely before startup. The factory resolves these directories from the project root using pathlib; no working-directory or Windows-specific model paths are required. Never load untrusted pickle files. Do not upload the local virtual environment, local database, `.env` or `.session-secret`.
 
 Build: `pip install -r requirements.txt`
 
@@ -20,7 +20,9 @@ Render terminates HTTPS. Production sets secure, HttpOnly, SameSite session cook
 
 The supplied Blueprint prepares a single-instance SQLite demo with a paid persistent disk mounted at `/var/data`. Only writes beneath that mount persist. An ephemeral filesystem or free service is unsuitable for preserving SQLite student records. The disk is available at runtime, not during the build. Keep one service instance; SQLite and its WAL files must remain on the same disk. Configure tested backups using SQLite's online backup API or a stopped service; do not copy only a live `.db` file while omitting its WAL. Restore-test backups before public use.
 
-The configured disk starts with the existing source-data seed, not your workstation's modified database. To retain local records, perform a deliberate backup/restore into the disk; no automatic upload or replacement is performed. Set `EDUGUARD_SEED_DATABASE=false` if a separately provisioned database must not be seeded.
+On the Free plan, the service starts from the source-data seed and local SQLite writes are temporary. Render can discard `/tmp/eduguard.db` whenever the service redeploys, restarts, or spins down. The local workstation database is never uploaded or replaced. Set `EDUGUARD_SEED_DATABASE=false` only when a separately provisioned database is intentionally available.
+
+Render's Free web services are suitable for a public demonstration, not durable multi-user production: they sleep after inactivity, may take about a minute to wake, and have an ephemeral filesystem. A paid service with a persistent disk or an approved PostgreSQL adapter would be required for durable hosted records; neither is activated by this project.
 
 `EDUGUARD_DATABASE_PATH` is the explicit storage boundary. `StudentRepository` remains the SQLite adapter, shared by imports and dashboard services. PostgreSQL is **not implemented**: `DATABASE_URL` fails fast rather than silently ignoring it or writing to SQLite. A later adapter must preserve repository operations, identifiers, transaction/idempotency semantics and history. Raw SQL also exists in dashboard/report/export handlers and must be ported with the repository; merely changing a URL will not work. Make that a separately reviewed migration with backups and parity tests. Prediction code requires no database dependency changes.
 

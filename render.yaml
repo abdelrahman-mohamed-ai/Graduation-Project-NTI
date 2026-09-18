@@ -1,12 +1,13 @@
-# Prepared configuration only. Creating this service incurs hosting/disk charges.
+# Free Render web-service configuration for a public demo.
+# Free instances have an ephemeral filesystem; SQLite data is intentionally temporary.
 services:
   - type: web
     name: eduguard-ai
     runtime: python
-    plan: standard
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn --config gunicorn.conf.py 'app:create_app()'
-    healthCheckPath: /
+    healthCheckPath: /health
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.16
@@ -15,10 +16,6 @@ services:
       - key: SECRET_KEY
         generateValue: true
       - key: EDUGUARD_DATABASE_PATH
-        value: /var/data/eduguard.db
+        value: /tmp/eduguard.db
       - key: EDUGUARD_SEED_DATABASE
         value: "true"
-    disk:
-      name: eduguard-data
-      mountPath: /var/data
-      sizeGB: 1
