@@ -1,0 +1,11 @@
+/* Component bounds and touch ergonomics, preserving existing desktop composition. */
+.topbar-right,.topbar-title,.page-heading>div,.section-heading>div,.form-actions>div{min-width:0}
+.grid-two>*,.grid-three>*,.analytics-grid>*,.result-overview>*,.upload-layout>*,.analysis-workspace>*{min-width:0}
+.table-wrap{max-width:100%;overscroll-behavior-inline:contain}.chart-box,.donut-container{min-width:0;max-width:100%}
+.chart-box canvas,.donut-container canvas{max-width:100%}
+.factor-list li>div,.history-row>div,.review-value,.file-selection{min-width:0;overflow-wrap:anywhere}
+.feature-details summary,.problem-list,.file-selection strong{overflow-wrap:anywhere}
+@media(min-width:761px) and (max-width:1100px){.topbar{padding-inline:22px;gap:12px}.topbar-right{gap:10px}.topbar-title>span{display:none}.advisor>span:last-child{display:none}.global-search input{width:130px}.kpi-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.page-heading{flex-wrap:wrap}.heading-actions{flex-wrap:wrap}}
+@media(max-width:760px){.button,.icon-button,.language-switch button,.row-actions .icon-button{min-height:44px;min-width:44px}.topbar{padding-inline:12px;gap:8px}.topbar-right{gap:6px}.language-switch button{padding-inline:7px}.global-search input{font-size:13px;min-height:44px}.topbar-title>span{display:none}.form-grid input,.form-grid select{min-height:46px;font-size:16px}.form-actions>div{gap:8px}.form-actions .button{flex:1}.heading-actions,.result-actions{flex-wrap:wrap}.button{white-space:normal}.stepper li{min-width:0}.stepper li b{overflow-wrap:anywhere;line-height:1.6}.table-pagination{flex-wrap:wrap}.table-pagination>div{margin-inline-start:auto}.chart-legend{flex-wrap:wrap;gap:12px}.section-heading{flex-wrap:wrap}.notice{overflow-wrap:anywhere}.report-count,.selected-card p{overflow-wrap:anywhere}.upload-steps{flex-wrap:wrap;row-gap:12px}.threshold-labels{gap:8px}.threshold-labels>div{min-width:0}.threshold-labels b{overflow-wrap:anywhere}.risk-panel>.fine-print{max-width:100%}}
+@media(min-width:1920px){main{width:100%}.page-heading h1{font-size:clamp(34px,2vw,44px)}}
+@media(min-width:761px) and (max-width:1100px){.analytics-grid,.grid-two{grid-template-columns:minmax(0,1fr)}.heading-actions{flex-direction:row}.kpi small{white-space:normal}.chart-box{min-height:260px}}

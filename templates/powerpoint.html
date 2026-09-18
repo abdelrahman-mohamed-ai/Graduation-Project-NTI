@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block styles %}<link rel="stylesheet" href="{{ url_for('static', filename='css/powerpoint.css') }}">{% endblock %}
+{% block scripts %}<script defer src="{{ url_for('static', filename='js/powerpoint.js') }}"></script>{% endblock %}
+{% block content %}
+<section id="powerpoint-app" class="powerpoint-app" aria-label="PowerPoint presentation" data-language="{{ language }}">
+  <div class="pp-ambient" aria-hidden="true"><span></span><span></span><span></span></div>
+  <header class="pp-header">
+    <div><span class="pp-kicker" id="pp-kicker"></span><h1 id="pp-title">PowerPoint</h1></div>
+    <div class="pp-header-actions"><button class="pp-control" type="button" id="pp-fullscreen" aria-label="Fullscreen"><i data-lucide="maximize"></i><span></span></button><a class="pp-control pp-exit" href="/" aria-label="Back to dashboard"><i data-lucide="x"></i><span></span></a></div>
+  </header>
+  <div class="pp-stage" id="pp-stage" tabindex="0" aria-live="polite">
+    <div class="pp-slide-frame" id="pp-slide-frame">
+      <div class="pp-slides" id="pp-slides"></div>
+    </div>
+  </div>
+  <footer class="pp-controls" aria-label="Presentation controls">
+    <button class="pp-control" type="button" id="pp-prev"><i data-lucide="arrow-left"></i><span></span></button>
+    <div class="pp-progress-wrap"><div class="pp-counter"><span id="pp-slide-label"></span> <strong id="pp-count">1 / 20</strong></div><div class="pp-progress"><span id="pp-progress"></span></div><small id="pp-hint"></small></div>
+    <button class="pp-control pp-next" type="button" id="pp-next"><span></span><i data-lucide="arrow-right"></i></button>
+  </footer>
+</section>
+{% endblock %}
+{% block data %}<script id="presentation-data" type="application/json">{{ presentation|tojson }}</script>{% endblock %}

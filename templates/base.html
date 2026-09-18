@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="{{ language }}" dir="{{ 'rtl' if language == 'ar' else 'ltr' }}">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token }}">
+  <meta name="description" content="EduGuard AI — student dropout early-warning and academic risk intelligence.">
+  <title>{{ title }} · EduGuard AI</title>
+  <link rel="icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/presentation.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/rtl.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/intro.css') }}">
+  {% block styles %}{% endblock %}
+  <script id="i18n-catalog" type="application/json">{{ translations|tojson }}</script>
+  <script defer src="{{ url_for('static', filename='js/i18n.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='vendor/lucide.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='vendor/chart.umd.min.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <script defer src="{{ url_for('static', filename='js/responsive.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</head>
+<body data-page="{{ page }}">
+{% include '_intro.html' %}
+<a class="skip-link" href="#main">Skip to content</a>
+<button class="sidebar-backdrop" id="sidebar-backdrop" aria-label="Close navigation"></button>
+<aside class="sidebar" id="sidebar">
+  <a class="brand" href="/"><span class="brand-icon"><i data-lucide="shield-check"></i></span><span>EduGuard <b>AI</b><small>STUDENT SUCCESS PLATFORM</small></span></a>
+  <span class="nav-label">WORKSPACE</span>
+  <nav aria-label="Main navigation">{% for key, href, icon, label in nav %}<a href="{{ href }}" class="nav-item {{ 'active' if page == key }}" {% if page == key %}aria-current="page"{% endif %} title="{{ label }}"><i data-lucide="{{ icon }}"></i><span>{{ label }}</span>{% if page == key %}<span class="nav-dot"></span>{% endif %}</a>{% endfor %}</nav>
+  <div class="sidebar-bottom"><div class="model-status"><span class="status-dot {{ 'offline' if not model.ready }}"></span><div><b>{{ 'Model Ready' if model.ready else 'Model unavailable' }}</b><small>Semester-1 · {{ model.metadata.get('selected_model', 'ML') }}</small></div><i data-lucide="activity"></i></div><p>Better insight. Earlier support.</p><button id="collapse-sidebar" class="collapse-btn"><i data-lucide="panel-left-close"></i><span>Collapse sidebar</span></button></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><div class="topbar-title"><button class="icon-button" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><i data-lucide="panel-left"></i></button><span>Workspace <span class="slash">/</span> <b>{{ title }}</b></span></div><div class="topbar-right"><div class="language-switch" role="group" aria-label="Language" data-i18n-skip><button type="button" data-language="en" lang="en" aria-pressed="{{ 'true' if language == 'en' else 'false' }}">EN</button><button type="button" data-language="ar" lang="ar" aria-pressed="{{ 'true' if language == 'ar' else 'false' }}">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</button></div><div class="global-search"><i data-lucide="search"></i><input id="global-search" autocomplete="off" aria-label="Search students globally" placeholder="Search students…" aria-controls="global-results" aria-expanded="false"><kbd>/</kbd><div id="global-results" class="search-results" hidden></div></div><button class="icon-button notification-button" id="notifications" aria-label="View review notifications"><i data-lucide="bell"></i><span></span></button><span class="topbar-divider"></span><div class="advisor"><span class="avatar">AA</span><span><b>Academic Advisor</b><small>Student Success Team</small></span></div></div></header>
+  <main id="main">
+    {% if not model.ready %}<div class="notice danger" role="alert"><i data-lucide="circle-alert"></i><div><b>Model unavailable</b><p>{{ model.error }}</p></div></div>{% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer><span>EduGuard AI <span class="footer-dot">·</span> Academic Risk Intelligence</span><span>Decision support. Human judgment always.</span></footer>
+</div>
+<div id="toast-region" class="toast-region" role="status" aria-live="polite"></div>
+<dialog id="notification-dialog"><div class="section-heading"><h2>Advisor review queue</h2><button class="icon-button" data-close-dialog aria-label="Close notifications"><i data-lucide="x"></i></button></div><p id="notification-content">Loading review queue…</p><a class="button primary" href="/students?review=1">View students requiring review <i data-lucide="arrow-up-right"></i></a></dialog>
+{% block data %}{% endblock %}
+</body></html>

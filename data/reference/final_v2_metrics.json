@@ -1,0 +1,560 @@
+{
+  "source_dataset": "data/raw/data.csv",
+  "dataset_shape": [
+    4424,
+    37
+  ],
+  "missing_values": 0,
+  "duplicates_before_drop": 0,
+  "target_counts": {
+    "Graduate": 2209,
+    "Dropout": 1421,
+    "Enrolled": 794
+  },
+  "resolved_rows": 3630,
+  "enrolled_rows": 794,
+  "feature_count": 30,
+  "numeric_feature_count": 13,
+  "categorical_feature_count": 17,
+  "excluded_future_features": [
+    "Curricular units 2nd sem (credited)",
+    "Curricular units 2nd sem (enrolled)",
+    "Curricular units 2nd sem (evaluations)",
+    "Curricular units 2nd sem (approved)",
+    "Curricular units 2nd sem (grade)",
+    "Curricular units 2nd sem (without evaluations)"
+  ],
+  "invalid_train": {
+    "Application order": 0,
+    "Previous qualification (grade)": 0,
+    "Admission grade": 0,
+    "Age at enrollment": 0,
+    "Curricular units 1st sem (credited)": 0,
+    "Curricular units 1st sem (enrolled)": 0,
+    "Curricular units 1st sem (evaluations)": 0,
+    "Curricular units 1st sem (approved)": 0,
+    "Curricular units 1st sem (grade)": 0,
+    "Curricular units 1st sem (without evaluations)": 0
+  },
+  "invalid_enrolled": {
+    "Application order": 0,
+    "Previous qualification (grade)": 0,
+    "Admission grade": 0,
+    "Age at enrollment": 0,
+    "Curricular units 1st sem (credited)": 0,
+    "Curricular units 1st sem (enrolled)": 0,
+    "Curricular units 1st sem (evaluations)": 0,
+    "Curricular units 1st sem (approved)": 0,
+    "Curricular units 1st sem (grade)": 0,
+    "Curricular units 1st sem (without evaluations)": 0
+  },
+  "zero_variance_features": [],
+  "split_rows": {
+    "train": 2323,
+    "calibration": 581,
+    "test": 726
+  },
+  "class_balance_train": {
+    "graduate": 1413,
+    "dropout": 910,
+    "scale_pos_weight": 1.5527472527472528
+  },
+  "selected_model": "XGBoost",
+  "cv_results": [
+    {
+      "Model": "XGBoost",
+      "Train PR-AUC": 0.9866443336,
+      "CV PR-AUC": 0.9276638343,
+      "Gap": 0.0589804993,
+      "CV ROC-AUC": 0.9336675642,
+      "CV Recall": 0.821978022,
+      "CV Precision": 0.8677132837,
+      "CV F1": 0.8440535043
+    },
+    {
+      "Model": "Logistic Regression",
+      "Train PR-AUC": 0.9469111985,
+      "CV PR-AUC": 0.9238844665,
+      "Gap": 0.023026732,
+      "CV ROC-AUC": 0.9308990786,
+      "CV Recall": 0.8461538462,
+      "CV Precision": 0.8519478867,
+      "CV F1": 0.8487938808
+    },
+    {
+      "Model": "Random Forest",
+      "Train PR-AUC": 0.9944175581,
+      "CV PR-AUC": 0.9182875735,
+      "Gap": 0.0761299846,
+      "CV ROC-AUC": 0.9284422004,
+      "CV Recall": 0.7967032967,
+      "CV Precision": 0.8770436371,
+      "CV F1": 0.8348058923
+    },
+    {
+      "Model": "Extra Trees",
+      "Train PR-AUC": 0.9979262013,
+      "CV PR-AUC": 0.8959963732,
+      "Gap": 0.1019298281,
+      "CV ROC-AUC": 0.9132917104,
+      "CV Recall": 0.7692307692,
+      "CV Precision": 0.844123999,
+      "CV F1": 0.8045836915
+    }
+  ],
+  "train_pr_auc": 0.9866443336008119,
+  "cv_pr_auc": 0.9276638343041993,
+  "train_cv_gap": 0.05898049929661264,
+  "test_metrics": {
+    "Accuracy": 0.8691460055096418,
+    "Precision": 0.7820895522388059,
+    "Recall": 0.9225352112676056,
+    "F1": 0.8465266558966075,
+    "PR-AUC": 0.9377955609524928,
+    "ROC-AUC": 0.9531180294436301,
+    "Brier Score": 0.07753758132457733
+  },
+  "thresholds": {
+    "high_risk": 0.48148149251937866,
+    "medium_risk": 0.3,
+    "review_margin": 0.08
+  },
+  "calibration_selection": {
+    "precision": 0.8388429752066116,
+    "recall": 0.8942731277533039,
+    "f1": 0.8656716417905451,
+    "brier": 0.07688052952289581
+  },
+  "confusion_matrix": [
+    [
+      369,
+      73
+    ],
+    [
+      22,
+      262
+    ]
+  ],
+  "confidence_intervals": [
+    {
+      "Metric": "PR-AUC",
+      "Estimate": 0.9385347632,
+      "95% CI Low": 0.9161018266,
+      "95% CI High": 0.9555469419
+    },
+    {
+      "Metric": "ROC-AUC",
+      "Estimate": 0.9536915262,
+      "95% CI Low": 0.9359615383,
+      "95% CI High": 0.9684400573
+    },
+    {
+      "Metric": "Recall",
+      "Estimate": 0.923351306,
+      "95% CI Low": 0.8892757937,
+      "95% CI High": 0.9555612245
+    },
+    {
+      "Metric": "Precision",
+      "Estimate": 0.782234957,
+      "95% CI Low": 0.7380240667,
+      "95% CI High": 0.8272782406
+    },
+    {
+      "Metric": "F1",
+      "Estimate": 0.8470974885,
+      "95% CI Low": 0.8148148148,
+      "95% CI High": 0.8760488981
+    }
+  ],
+  "risk_counts": {
+    "Low": 309,
+    "Medium": 0,
+    "High": 485
+  },
+  "enrolled_total": 794,
+  "human_review_count": 140,
+  "permutation_importance": [
+    {
+      "Feature": "Curricular units 1st sem (approved)",
+      "Importance": 0.2852187992
+    },
+    {
+      "Feature": "Curricular units 1st sem (enrolled)",
+      "Importance": 0.042846897
+    },
+    {
+      "Feature": "Tuition fees up to date",
+      "Importance": 0.031834553
+    },
+    {
+      "Feature": "Course",
+      "Importance": 0.0149714717
+    },
+    {
+      "Feature": "Scholarship holder",
+      "Importance": 0.0051729909
+    },
+    {
+      "Feature": "Curricular units 1st sem (grade)",
+      "Importance": 0.0045818912
+    },
+    {
+      "Feature": "Debtor",
+      "Importance": 0.0038267926
+    },
+    {
+      "Feature": "Gender",
+      "Importance": 0.0028899702
+    },
+    {
+      "Feature": "Curricular units 1st sem (evaluations)",
+      "Importance": 0.0024099656
+    },
+    {
+      "Feature": "GDP",
+      "Importance": 0.00194842
+    },
+    {
+      "Feature": "Admission grade",
+      "Importance": 0.0018244108
+    },
+    {
+      "Feature": "Displaced",
+      "Importance": 0.0015054952
+    },
+    {
+      "Feature": "Curricular units 1st sem (credited)",
+      "Importance": 0.0014382717
+    },
+    {
+      "Feature": "Application mode",
+      "Importance": 0.0008536412
+    },
+    {
+      "Feature": "Unemployment rate",
+      "Importance": 0.0006878145
+    }
+  ],
+  "shap_global": [
+    {
+      "Feature": "Curricular units 1st sem (approved)",
+      "Mean |SHAP|": 1.6268441677
+    },
+    {
+      "Feature": "Tuition fees up to date",
+      "Mean |SHAP|": 0.4464859068
+    },
+    {
+      "Feature": "Curricular units 1st sem (grade)",
+      "Mean |SHAP|": 0.3937901855
+    },
+    {
+      "Feature": "Course",
+      "Mean |SHAP|": 0.3803649247
+    },
+    {
+      "Feature": "Curricular units 1st sem (enrolled)",
+      "Mean |SHAP|": 0.3502492309
+    },
+    {
+      "Feature": "Scholarship holder",
+      "Mean |SHAP|": 0.3043915927
+    },
+    {
+      "Feature": "Age at enrollment",
+      "Mean |SHAP|": 0.24134323
+    },
+    {
+      "Feature": "Gender",
+      "Mean |SHAP|": 0.2089504153
+    },
+    {
+      "Feature": "Admission grade",
+      "Mean |SHAP|": 0.206367299
+    },
+    {
+      "Feature": "Unemployment rate",
+      "Mean |SHAP|": 0.2047743946
+    },
+    {
+      "Feature": "Debtor",
+      "Mean |SHAP|": 0.1570716351
+    },
+    {
+      "Feature": "Mother's occupation",
+      "Mean |SHAP|": 0.1498156488
+    },
+    {
+      "Feature": "Curricular units 1st sem (evaluations)",
+      "Mean |SHAP|": 0.1409985423
+    },
+    {
+      "Feature": "Displaced",
+      "Mean |SHAP|": 0.1349758804
+    },
+    {
+      "Feature": "Curricular units 1st sem (credited)",
+      "Mean |SHAP|": 0.1135972813
+    }
+  ],
+  "local_explanation": [
+    {
+      "Feature": "Tuition fees up to date",
+      "SHAP": 1.9931513071,
+      "Impact": 1.9931513071,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "Curricular units 1st sem (approved)",
+      "SHAP": 1.6199331284,
+      "Impact": 1.6199331284,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "GDP",
+      "SHAP": 0.342225343,
+      "Impact": 0.342225343,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "Father's occupation",
+      "SHAP": -0.3378240764,
+      "Impact": 0.3378240764,
+      "Direction": "Lower risk"
+    },
+    {
+      "Feature": "Curricular units 1st sem (grade)",
+      "SHAP": 0.2679569125,
+      "Impact": 0.2679569125,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "Gender",
+      "SHAP": 0.251598984,
+      "Impact": 0.251598984,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "Scholarship holder",
+      "SHAP": 0.150458321,
+      "Impact": 0.150458321,
+      "Direction": "Higher risk"
+    },
+    {
+      "Feature": "Unemployment rate",
+      "SHAP": -0.1451351941,
+      "Impact": 0.1451351941,
+      "Direction": "Lower risk"
+    },
+    {
+      "Feature": "Age at enrollment",
+      "SHAP": -0.1435031444,
+      "Impact": 0.1435031444,
+      "Direction": "Lower risk"
+    },
+    {
+      "Feature": "Displaced",
+      "SHAP": -0.1410597116,
+      "Impact": 0.1410597116,
+      "Direction": "Lower risk"
+    }
+  ],
+  "fairness": [
+    {
+      "Group": "Gender",
+      "Value": "Female",
+      "Students": 438,
+      "Recall": 0.8923076923,
+      "False Positive Rate": 0.1136363636,
+      "Note": ""
+    },
+    {
+      "Group": "Gender",
+      "Value": "Male",
+      "Students": 288,
+      "Recall": 0.9480519481,
+      "False Positive Rate": 0.2835820896,
+      "Note": ""
+    },
+    {
+      "Group": "International",
+      "Value": "No",
+      "Students": 708,
+      "Recall": 0.9239130435,
+      "False Positive Rate": 0.1597222222,
+      "Note": ""
+    },
+    {
+      "Group": "International",
+      "Value": "Yes",
+      "Students": 18,
+      "Recall": 0.875,
+      "False Positive Rate": 0.4,
+      "Note": "Small subgroup"
+    }
+  ],
+  "curves": {
+    "roc": {
+      "x": [
+        0,
+        0,
+        0,
+        0.013574660633484163,
+        0.013574660633484163,
+        0.01809954751131222,
+        0.020361990950226245,
+        0.020361990950226245,
+        0.03619909502262444,
+        0.06108597285067873,
+        0.06108597285067873,
+        0.07013574660633484,
+        0.07239819004524888,
+        0.07239819004524888,
+        0.083710407239819,
+        0.08823529411764706,
+        0.09502262443438914,
+        0.09728506787330317,
+        0.16515837104072398,
+        0.2239819004524887,
+        0.22624434389140272,
+        0.25565610859728505,
+        0.5407239819004525,
+        0.8552036199095022,
+        0.9773755656108597,
+        1
+      ],
+      "y": [
+        0,
+        0.5,
+        0.5070422535211268,
+        0.6901408450704225,
+        0.704225352112676,
+        0.7359154929577465,
+        0.7359154929577465,
+        0.7570422535211268,
+        0.8098591549295775,
+        0.852112676056338,
+        0.8556338028169014,
+        0.8626760563380281,
+        0.8626760563380281,
+        0.8661971830985915,
+        0.8697183098591549,
+        0.8697183098591549,
+        0.8732394366197183,
+        0.8732394366197183,
+        0.9225352112676056,
+        0.9401408450704225,
+        0.9401408450704225,
+        0.9471830985915493,
+        0.9823943661971831,
+        0.9929577464788732,
+        1,
+        1
+      ]
+    },
+    "precision_recall": {
+      "x": [
+        1,
+        1,
+        0.9929577464788732,
+        0.9823943661971831,
+        0.9471830985915493,
+        0.9401408450704225,
+        0.9401408450704225,
+        0.9225352112676056,
+        0.8732394366197183,
+        0.8732394366197183,
+        0.8697183098591549,
+        0.8697183098591549,
+        0.8697183098591549,
+        0.8661971830985915,
+        0.8626760563380281,
+        0.8626760563380281,
+        0.8556338028169014,
+        0.852112676056338,
+        0.8098591549295775,
+        0.7570422535211268,
+        0.7535211267605634,
+        0.75,
+        0.7464788732394366,
+        0.7429577464788732,
+        0.7394366197183099,
+        0.7359154929577465,
+        0.7359154929577465,
+        0.704225352112676,
+        0.7007042253521126,
+        0.6971830985915493,
+        0.6936619718309859,
+        0.6901408450704225,
+        0.5070422535211268,
+        0.5035211267605634,
+        0.5,
+        0
+      ],
+      "y": [
+        0.39118457300275483,
+        0.39664804469273746,
+        0.42727272727272725,
+        0.5386100386100386,
+        0.7041884816753927,
+        0.7275204359673024,
+        0.7295081967213115,
+        0.7820895522388059,
+        0.852233676975945,
+        0.8551724137931035,
+        0.8636363636363636,
+        0.8666666666666667,
+        0.8697183098591549,
+        0.8848920863309353,
+        0.8844765342960289,
+        0.8876811594202898,
+        0.9,
+        0.8996282527881041,
+        0.9349593495934959,
+        0.9598214285714286,
+        0.9596412556053812,
+        0.9594594594594594,
+        0.9592760180995475,
+        0.9590909090909091,
+        0.958904109589041,
+        0.9587155963302753,
+        0.9631336405529954,
+        0.970873786407767,
+        0.9707317073170731,
+        0.9705882352941176,
+        0.9704433497536946,
+        0.9702970297029703,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "calibration": {
+      "mean_predicted": [
+        0.05532477595485174,
+        0.0731707289814949,
+        0.16599522673703254,
+        0.5014101867492382,
+        0.8444400973736294,
+        0.9998061238891549
+      ],
+      "fraction_positive": [
+        0.02403846153846154,
+        0.07352941176470588,
+        0.14893617021276595,
+        0.2923076923076923,
+        0.7857142857142857,
+        1
+      ]
+    }
+  },
+  "validation": {
+    "execution": "Isolated execution of all 21 original FINAL V2 code cells",
+    "execution_errors": 0,
+    "source_note": "Exact current data/raw/data.csv staged only under the legacy notebook filename for validation.",
+    "production_artifacts_match": true,
+    "production_probability_max_difference": 0
+  }
+}

@@ -1,0 +1,38 @@
+Feature,Type,What it means,Encoding / unit,Why it may matter (not causal),Availability
+Marital status,Categorical,Student marital status.,Codes 1–6,May reflect different life responsibilities; non-actionable and not causal.,Enrollment
+Application mode,Categorical,Admission pathway/mode used to enter the institution.,Official admission-mode code,"Can capture different entry pathways, transfers, mature-entry routes, and prior education routes.",Enrollment
+Application order,Ordinal,Position of this degree/program in the student's application preferences.,0 = first choice; up to 9 = later choice,"Later preferences may correlate with program fit, but this is only an association.",Enrollment
+Course,Categorical,Degree/program in which the student is enrolled.,Official course code,"Programs can differ in workload, curriculum, selectivity, and historical retention patterns.",Enrollment
+Daytime/evening attendance,Binary,Whether the student follows a daytime or evening schedule.,1 = daytime; 0 = evening,Schedule can relate to work/life constraints. This is NOT attendance percentage.,Enrollment
+Previous qualification,Categorical,Qualification held before higher-education entry.,Official education code,Prior pathway can reflect preparation and transition into higher education.,Enrollment
+Previous qualification (grade),Continuous,Grade achieved in the previous qualification.,0–200 scale,Higher prior achievement may indicate stronger preparation.,Enrollment
+Nacionality,Categorical,Student nationality; the source column is misspelled as 'Nacionality'.,Official nationality code,Sensitive/non-actionable background variable; fairness should be checked.,Enrollment
+Mother's qualification,Categorical,Mother's education level.,Official education code,Family/socioeconomic-background proxy; non-actionable and not causal.,Enrollment
+Father's qualification,Categorical,Father's education level.,Official education code,Family/socioeconomic-background proxy; non-actionable and not causal.,Enrollment
+Mother's occupation,Categorical,Mother's occupation category.,Official occupation code,Socioeconomic-context proxy; non-actionable and should be interpreted cautiously.,Enrollment
+Father's occupation,Categorical,Father's occupation category.,Official occupation code,Socioeconomic-context proxy; non-actionable and should be interpreted cautiously.,Enrollment
+Admission grade,Continuous,Student admission grade.,0–200 scale,Direct indicator of academic preparation at entry.,Enrollment
+Displaced,Binary,Whether the student is classified as displaced.,1 = yes; 0 = no,Relocation/living-context disruption may relate to support needs.,Enrollment
+Educational special needs,Binary,Whether the student has special educational needs.,1 = yes; 0 = no,May indicate need for accessibility/support services; should never be framed as a deficit.,Enrollment
+Debtor,Binary,Whether the student has debtor status.,1 = yes; 0 = no,May reflect financial/administrative pressure and is potentially actionable through support.,Enrollment
+Tuition fees up to date,Binary,Whether tuition fees are up to date.,1 = yes; 0 = no,Financial/administrative status can be a warning signal and is actionable through support.,Enrollment
+Gender,Binary,Student gender as encoded by the source.,1 = male; 0 = female,Sensitive/non-actionable; model behavior across groups should be audited.,Enrollment
+Scholarship holder,Binary,Whether the student has a scholarship.,1 = yes; 0 = no,Can reflect access to financial support/resources.,Enrollment
+Age at enrollment,Integer,Student age when enrolled.,Years,May correlate with work/family responsibilities and life stage; non-causal.,Enrollment
+International,Binary,Whether the student is an international student.,1 = yes; 0 = no,Can relate to adjustment/support context; sensitive/non-actionable as a reason.,Enrollment
+Curricular units 1st sem (credited),Integer,Number of curricular units credited in Semester 1.,Count,Reflects recognized prior learning/credits and academic structure.,Semester 1
+Curricular units 1st sem (enrolled),Integer,Number of units enrolled in Semester 1.,Count,Represents academic load.,Semester 1
+Curricular units 1st sem (evaluations),Integer,Number of evaluations linked to Semester-1 curricular units.,Count,Reflects assessment activity and workload.,Semester 1
+Curricular units 1st sem (approved),Integer,Number of Semester-1 curricular units passed/approved.,Count,Direct measure of early academic progress; expected to be highly informative.,Semester 1
+Curricular units 1st sem (grade),Continuous,Average grade in Semester 1.,0–20 scale,Direct measure of early academic achievement.,Semester 1
+Curricular units 1st sem (without evaluations),Integer,Number of Semester-1 units without evaluation.,Count,Can indicate incomplete/missed assessment activity or unusual progression.,Semester 1
+Curricular units 2nd sem (credited),Integer,Number of curricular units credited in Semester 2.,Count,Potentially predictive but future information at our Semester-1 warning point; excluded.,Future / excluded
+Curricular units 2nd sem (enrolled),Integer,Number of units enrolled in Semester 2.,Count,Future information for the chosen early-warning point; excluded.,Future / excluded
+Curricular units 2nd sem (evaluations),Integer,Number of Semester-2 evaluations.,Count,Future information for the chosen early-warning point; excluded.,Future / excluded
+Curricular units 2nd sem (approved),Integer,Number of Semester-2 units passed/approved.,Count,"Highly informative retrospectively, but too late for our Semester-1 intervention point; excluded.",Future / excluded
+Curricular units 2nd sem (grade),Continuous,Average grade in Semester 2.,0–20 scale,Highly informative but future information at the selected prediction point; excluded.,Future / excluded
+Curricular units 2nd sem (without evaluations),Integer,Number of Semester-2 units without evaluation.,Count,Future information for our operational prediction point; excluded.,Future / excluded
+Unemployment rate,Continuous,Macroeconomic unemployment rate associated with the cohort.,Percent,Economic-context variable; not directly actionable by the university.,Enrollment
+Inflation rate,Continuous,Macroeconomic inflation rate associated with the cohort.,Percent,Economic-context / possible financial-pressure proxy.,Enrollment
+GDP,Continuous,GDP macroeconomic indicator supplied with the dataset.,Unit not specified by source variable table,Cohort-level economic context; not an individual cause.,Enrollment
+Target,Target,Final status at the end of the normal duration of the course.,Dropout / Enrolled / Graduate,Prediction outcome. Enrolled is unresolved and not treated as a confirmed negative label.,Outcome

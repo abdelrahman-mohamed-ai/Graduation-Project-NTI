@@ -1,0 +1,3 @@
+# Optional test tooling; install only into an environment you intend to modify.
+pytest
+websocket-client

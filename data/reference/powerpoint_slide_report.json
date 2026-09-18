@@ -1,0 +1,1321 @@
+{
+  "total_slides": 20,
+  "slides": [
+    {
+      "number": 1,
+      "title_en": "EduGuard AI",
+      "title_ar": "EduGuard AI",
+      "purpose": "Introduce the graduation project and define the academic early-warning system.",
+      "visible_content": [
+        "eyebrow: Graduation Project",
+        "title: EduGuard AI",
+        "subtitle: Student Academic Risk Early Warning System",
+        "meta: Machine Learning / AI Decision Support System",
+        "meta: NTI Graduation Project",
+        "body: An academic early-warning system for evidence-based advisor support."
+      ],
+      "visible_content_ar": [
+        "eyebrow: مشروع التخرج",
+        "title: EduGuard AI",
+        "subtitle: نظام الإنذار المبكر للمخاطر الأكاديمية للطلاب",
+        "meta: نظام دعم قرار باستخدام تعلم الآلة والذكاء الاصطناعي",
+        "meta: مشروع تخرج NTI",
+        "body: نظام أكاديمي للإنذار المبكر ودعم المرشدين بقرارات قائمة على الأدلة."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Formal cover, subtitle, project metadata, and footer."
+      ],
+      "methodology": [],
+      "why_this_method": [],
+      "oral_explanation_points": [
+        "Define early warning as support before a final outcome is resolved.",
+        "Distinguish estimated risk from certainty."
+      ],
+      "likely_questions": [
+        "What is EduGuard AI?",
+        "Who makes the final decision?"
+      ],
+      "supported_answers": [
+        "A Flask decision-support platform around an exported Semester-1 ML pipeline.",
+        "The academic advisor remains responsible for the final decision."
+      ],
+      "warnings": [
+        "Never say the model guarantees dropout."
+      ]
+    },
+    {
+      "number": 2,
+      "title_en": "Project idea",
+      "title_ar": "فكرة المشروع",
+      "purpose": "Define the project idea as an early-warning decision-support workflow.",
+      "visible_content": [
+        "title: Project idea",
+        "lead: EduGuard AI is an early-warning decision-support system for universities.",
+        "points: Identify students who may be academically at risk before the problem becomes severe.",
+        "points: Estimate dropout risk from information available by the end of Semester 1.",
+        "points: Give academic advisors an earlier, explainable basis for supportive intervention.",
+        "diagram: Student information",
+        "diagram: Estimated risk",
+        "diagram: Advisor support"
+      ],
+      "visible_content_ar": [
+        "title: فكرة المشروع",
+        "lead: EduGuard AI هو نظام لدعم القرار والإنذار المبكر في الجامعات.",
+        "points: التعرف على الطلاب الذين قد يواجهون خطرًا أكاديميًا قبل تفاقم المشكلة.",
+        "points: تقدير مخاطر الانسحاب باستخدام المعلومات المتاحة حتى نهاية الفصل الدراسي الأول.",
+        "points: تزويد المرشد الأكاديمي أساسًا مبكرًا وقابلًا للتفسير للتدخل الداعم.",
+        "diagram: بيانات الطالب",
+        "diagram: المخاطر المقدّرة",
+        "diagram: دعم المرشد"
+      ],
+      "metrics": [],
+      "visuals": [
+        "Student information → Estimated risk → Advisor support flow."
+      ],
+      "methodology": [],
+      "why_this_method": [],
+      "oral_explanation_points": [
+        "Explain why an early signal is useful before an outcome is known.",
+        "Connect the output to supportive advising."
+      ],
+      "likely_questions": [
+        "What makes this early warning?",
+        "What does the output represent?"
+      ],
+      "supported_answers": [
+        "The prediction point is the end of Semester 1.",
+        "The output is a calibrated estimated probability with a band, review flag, explanations, and recommendations."
+      ],
+      "warnings": [
+        "Risk is not causality or certainty."
+      ]
+    },
+    {
+      "number": 3,
+      "title_en": "Problem statement",
+      "title_ar": "مشكلة البحث",
+      "purpose": "Present the academic problem and research question.",
+      "visible_content": [
+        "title: Problem statement",
+        "lead: Universities need a practical way to focus limited advising time on students who may need support first.",
+        "points: Struggling students may be identified only after important opportunities for support have passed.",
+        "points: Academic and financial indicators can provide an earlier warning signal.",
+        "points: Manual monitoring becomes difficult as the number of students grows.",
+        "points: Advisors need a data-driven support tool while retaining human judgment.",
+        "question: Can information available by the end of Semester 1 identify students at risk of dropout?"
+      ],
+      "visible_content_ar": [
+        "title: مشكلة البحث",
+        "lead: تحتاج الجامعات إلى طريقة عملية لتركيز وقت الإرشاد المحدود على الطلاب الذين قد يحتاجون إلى الدعم أولًا.",
+        "points: قد يتم اكتشاف تعثر الطلاب بعد فوات فرص مهمة للدعم.",
+        "points: يمكن أن توفر المؤشرات الأكاديمية والمالية إنذارًا مبكرًا.",
+        "points: تصبح المتابعة اليدوية صعبة مع زيادة عدد الطلاب.",
+        "points: يحتاج المرشدون إلى أداة قائمة على البيانات مع الحفاظ على الحكم البشري.",
+        "question: هل يمكن استخدام المعلومات المتاحة حتى نهاية الفصل الدراسي الأول للتعرف على الطلاب المعرضين لخطر الانسحاب؟"
+      ],
+      "metrics": [],
+      "visuals": [
+        "Bullets and highlighted research-question callout."
+      ],
+      "methodology": [],
+      "why_this_method": [],
+      "oral_explanation_points": [
+        "Explain why manual monitoring of a large cohort is difficult.",
+        "Read the research question exactly."
+      ],
+      "likely_questions": [
+        "Why is early identification difficult?"
+      ],
+      "supported_answers": [
+        "A large cohort makes consistent manual prioritization difficult; the system provides a repeatable aid while keeping human judgment."
+      ],
+      "warnings": [
+        "Data does not replace the advisor."
+      ]
+    },
+    {
+      "number": 4,
+      "title_en": "Project objectives",
+      "title_ar": "أهداف المشروع",
+      "purpose": "List the project objectives.",
+      "visible_content": [
+        "title: Project objectives",
+        "lead: The project combines a validated machine-learning workflow with a usable advisor interface.",
+        "objectives: Build an early-warning machine-learning model.",
+        "objectives: Predict dropout risk using data available by Semester 1.",
+        "objectives: Prevent future-data leakage during model development.",
+        "objectives: Provide calibrated risk scores rather than an uncalibrated ranking only.",
+        "objectives: Explain individual predictions and generate advisor recommendations.",
+        "objectives: Deliver a web-based decision-support system for analysis and reporting."
+      ],
+      "visible_content_ar": [
+        "title: أهداف المشروع",
+        "lead: يجمع المشروع بين سير عمل موثوق لتعلم الآلة وواجهة عملية للمرشد الأكاديمي.",
+        "objectives: بناء نموذج تعلم آلة للإنذار المبكر.",
+        "objectives: توقع مخاطر الانسحاب باستخدام بيانات الفصل الدراسي الأول.",
+        "objectives: منع تسرب بيانات المستقبل أثناء التطوير.",
+        "objectives: تقديم درجات مخاطر معايرة بدلًا من ترتيب غير معاير فقط.",
+        "objectives: تفسير التنبؤات الفردية وتوليد توصيات للمرشد.",
+        "objectives: تقديم نظام ويب لدعم القرار والتحليل والتقارير."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Six numbered objective blocks."
+      ],
+      "methodology": [],
+      "why_this_method": [],
+      "oral_explanation_points": [
+        "Explain leakage prevention and calibration as validity objectives.",
+        "Connect explainability and recommendations to advisor usability."
+      ],
+      "likely_questions": [
+        "Which objective protects validity?",
+        "Why include explainability?"
+      ],
+      "supported_answers": [
+        "Leakage prevention protects evaluation credibility; explanations let advisors inspect influential inputs."
+      ],
+      "warnings": [
+        "Objectives do not establish causality."
+      ]
+    },
+    {
+      "number": 5,
+      "title_en": "System scope",
+      "title_ar": "نطاق النظام",
+      "purpose": "Define the system boundary as decision support.",
+      "visible_content": [
+        "title: System scope",
+        "lead: EduGuard supports academic review; it does not replace an academic decision-maker.",
+        "does: Estimate dropout risk",
+        "does: Explain influential model inputs",
+        "does: Rank students for review",
+        "does: Support advisor follow-up",
+        "does_not: Automatically expel students",
+        "does_not: Make final academic decisions",
+        "does_not: Prove that a factor caused dropout",
+        "callout: Decision Support System"
+      ],
+      "visible_content_ar": [
+        "title: نطاق النظام",
+        "lead: يدعم EduGuard المراجعة الأكاديمية ولا يحل محل صاحب القرار الأكاديمي.",
+        "does: تقدير مخاطر الانسحاب",
+        "does: تفسير المدخلات المؤثرة في النموذج",
+        "does: ترتيب الطلاب للمراجعة",
+        "does: دعم متابعة المرشد",
+        "does_not: فصل الطلاب تلقائيًا",
+        "does_not: اتخاذ القرارات الأكاديمية النهائية",
+        "does_not: إثبات أن عاملًا ما تسبب في الانسحاب",
+        "callout: نظام لدعم القرار"
+      ],
+      "metrics": [],
+      "visuals": [
+        "Does/does-not panels and Decision Support System callout."
+      ],
+      "methodology": [],
+      "why_this_method": [],
+      "oral_explanation_points": [
+        "Describe ranking and review as prioritization.",
+        "Emphasize no automatic expulsion or final decision."
+      ],
+      "likely_questions": [
+        "Is this automated decision making?",
+        "Can it expel a student?"
+      ],
+      "supported_answers": [
+        "No; it estimates risk and supports advisor review. No automatic punishment exists."
+      ],
+      "warnings": [
+        "Never present it as autonomous disciplinary software."
+      ]
+    },
+    {
+      "number": 6,
+      "title_en": "Dataset",
+      "title_ar": "بيانات الدراسة",
+      "purpose": "Describe the source cohort and original target categories.",
+      "visible_content": [
+        "title: Dataset",
+        "lead: The source contains demographic, admission, academic, financial and economic variables.",
+        "source: UCI Machine Learning Repository",
+        "why: The dataset provides a documented higher-education context for evaluating an early-warning approach.",
+        "Students: 4,424",
+        "Original input features: 36",
+        "Original outcomes: 3",
+        "Early-warning stages: 2"
+      ],
+      "visible_content_ar": [
+        "title: بيانات الدراسة",
+        "lead: تتضمن البيانات متغيرات ديموغرافية ومتغيرات القبول والأداء الأكاديمي والتمويل والاقتصاد.",
+        "source: مستودع UCI للتعلم الآلي",
+        "why: توفر البيانات سياقًا موثقًا للتعليم العالي لتقييم منهج الإنذار المبكر.",
+        "Students: 4,424",
+        "Original input features: 36",
+        "Original outcomes: 3",
+        "Early-warning stages: 2"
+      ],
+      "metrics": [
+        {
+          "label": "Students",
+          "value": 4424
+        },
+        {
+          "label": "Original features",
+          "value": 36
+        },
+        {
+          "label": "Graduate",
+          "value": 2209
+        },
+        {
+          "label": "Dropout",
+          "value": 1421
+        },
+        {
+          "label": "Enrolled",
+          "value": 794
+        }
+      ],
+      "visuals": [
+        "Metric cards, outcome cards, source label, and dataset note."
+      ],
+      "methodology": [
+        "Counts come from data/raw/data.csv; original input count is 36."
+      ],
+      "why_this_method": [
+        "The source provides demographic, admission, academic, financial, and economic context."
+      ],
+      "oral_explanation_points": [
+        "State 4,424 rows, 36 inputs, and three outcomes.",
+        "Explain UCI provenance without claiming UCI collected the data.",
+        "Differentiate original inputs from 30 operational features."
+      ],
+      "likely_questions": [
+        "How many students and variables?",
+        "What are the outcomes?"
+      ],
+      "supported_answers": [
+        "There are 4,424 students, 36 inputs, Graduate 2,209, Dropout 1,421, and Enrolled 794."
+      ],
+      "warnings": [
+        "Do not call Enrolled a resolved negative label."
+      ]
+    },
+    {
+      "number": 7,
+      "title_en": "Target preparation",
+      "title_ar": "إعداد الهدف",
+      "purpose": "Explain the binary training target and separate current-student scoring cohort.",
+      "visible_content": [
+        "title: Target preparation",
+        "lead: The three original outcomes are separated into resolved training labels and a current-student scoring cohort.",
+        "resolved: Graduate",
+        "resolved: 0",
+        "resolved: Dropout",
+        "resolved: 1",
+        "unresolved: Enrolled",
+        "note: Enrolled is excluded from supervised training because it is not a resolved final outcome. After training, Enrolled students are scored by the model.",
+        "why: This keeps the training target tied to outcomes that are known and resolved."
+      ],
+      "visible_content_ar": [
+        "title: إعداد الهدف",
+        "lead: يتم فصل الحالات النهائية الأصلية إلى تسميات تدريب محسومة ومجموعة طلاب حاليين للتقييم.",
+        "resolved: خريج",
+        "resolved: 0",
+        "resolved: منسحب من الدراسة",
+        "resolved: 1",
+        "unresolved: مقيد حاليًا",
+        "note: يُستبعد الطلاب المقيدون من التدريب الخاضع للإشراف لأن حالتهم ليست نتيجة نهائية محسومة. بعد التدريب، يقيّم النموذج الطلاب المقيدين.",
+        "why: يربط هذا الإجراء هدف التدريب بنتائج معروفة ومحسومة."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Graduate→0, Dropout→1, and Enrolled-not-training cards."
+      ],
+      "methodology": [
+        "Training uses resolved Graduate/Dropout rows; Enrolled is scored after training."
+      ],
+      "why_this_method": [
+        "Enrolled is unresolved, so relabeling it would invent an outcome."
+      ],
+      "oral_explanation_points": [
+        "Mention 3,630 resolved and 794 Enrolled rows.",
+        "Clarify Student ID and name are not model features."
+      ],
+      "likely_questions": [
+        "Why not train on Enrolled?",
+        "What happens to Enrolled?"
+      ],
+      "supported_answers": [
+        "Enrolled has no final outcome at the prediction point; the trained binary model scores the current students."
+      ],
+      "warnings": [
+        "Do not describe Enrolled as class 0 or a confirmed graduate."
+      ]
+    },
+    {
+      "number": 8,
+      "title_en": "Early-warning design and data leakage",
+      "title_ar": "تصميم الإنذار المبكر ومنع تسرب البيانات",
+      "purpose": "Show the end-of-Semester-1 prediction point and prevent future-data leakage.",
+      "visible_content": [
+        "title: Early-warning design and data leakage",
+        "lead: The prediction point is the end of Semester 1.",
+        "allowed: Enrollment information",
+        "allowed: Admission and background information",
+        "allowed: Financial and economic context",
+        "allowed: Semester-1 performance",
+        "excluded: Semester-2 credited units",
+        "excluded: Semester-2 enrolled units",
+        "excluded: Semester-2 evaluations",
+        "excluded: Semester-2 approved units",
+        "excluded: Semester-2 grade",
+        "excluded: Semester-2 units without evaluation",
+        "note: Semester-2 variables contain future information relative to the decision point. Keeping them would make evaluation unrealistically strong.",
+        "why: Removing future information makes the early-warning experiment match the information available when an advisor would act."
+      ],
+      "visible_content_ar": [
+        "title: تصميم الإنذار المبكر ومنع تسرب البيانات",
+        "lead: تحدث عملية التنبؤ في نهاية الفصل الدراسي الأول.",
+        "allowed: معلومات الالتحاق",
+        "allowed: معلومات القبول والخلفية",
+        "allowed: السياق المالي والاقتصادي",
+        "allowed: أداء الفصل الدراسي الأول",
+        "excluded: الوحدات المحتسبة في الفصل الثاني",
+        "excluded: الوحدات المسجلة في الفصل الثاني",
+        "excluded: تقييمات الفصل الثاني",
+        "excluded: الوحدات المجتازة في الفصل الثاني",
+        "excluded: درجة الفصل الثاني",
+        "excluded: وحدات الفصل الثاني دون تقييم",
+        "note: تحتوي متغيرات الفصل الثاني على معلومات مستقبلية بالنسبة إلى نقطة القرار. استخدامها يجعل التقييم قويًا بشكل غير واقعي.",
+        "why: استبعاد معلومات المستقبل يجعل التجربة مطابقة للمعلومات المتاحة عند اتخاذ قرار الدعم."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Allowed/excluded panels for Semester 1 and Semester 2."
+      ],
+      "methodology": [
+        "Six Semester-2 columns are excluded: credited, enrolled, evaluations, approved, grade, and without evaluations."
+      ],
+      "why_this_method": [
+        "Semester-2 values are future information and would make evaluation unrealistically strong."
+      ],
+      "oral_explanation_points": [
+        "Name the prediction point.",
+        "Explain leakage.",
+        "State that six columns were removed, leaving 30 operational features."
+      ],
+      "likely_questions": [
+        "What is leakage here?",
+        "Why not use Semester 2?"
+      ],
+      "supported_answers": [
+        "Leakage uses information unavailable when an advisor would act; Semester 2 would no longer test an early-warning system."
+      ],
+      "warnings": [
+        "Do not claim the operational model uses Semester-2 inputs."
+      ]
+    },
+    {
+      "number": 9,
+      "title_en": "Data preprocessing",
+      "title_ar": "المعالجة المسبقة للبيانات",
+      "purpose": "Document data-quality checks and preprocessing.",
+      "visible_content": [
+        "title: Data preprocessing",
+        "lead: The validation workflow checks data quality before fitting any candidate model.",
+        "pipeline: Raw data",
+        "pipeline: Quality check",
+        "pipeline: Duplicate check",
+        "pipeline: Invalid-value validation",
+        "pipeline: Feature typing",
+        "pipeline: Encoding",
+        "pipeline: Scaling where required",
+        "points: Categorical features are One-Hot Encoded.",
+        "points: Numeric missing values use median imputation.",
+        "points: Categorical missing values use most-frequent imputation.",
+        "why: A fixed preprocessing pipeline applies the same data preparation rules during training and inference."
+      ],
+      "visible_content_ar": [
+        "title: المعالجة المسبقة للبيانات",
+        "lead: يتحقق سير العمل من جودة البيانات قبل تدريب أي نموذج مرشح.",
+        "pipeline: البيانات الخام",
+        "pipeline: فحص الجودة",
+        "pipeline: فحص التكرار",
+        "pipeline: التحقق من القيم غير الصالحة",
+        "pipeline: تحديد نوع الخصائص",
+        "pipeline: الترميز",
+        "pipeline: القياس عند الحاجة",
+        "points: يتم ترميز الخصائص الفئوية باستخدام One-Hot Encoding.",
+        "points: تستخدم القيم الوسيطة لتعويض القيم الرقمية المفقودة.",
+        "points: تستخدم الفئة الأكثر تكرارًا لتعويض القيم الفئوية المفقودة.",
+        "why: يطبق خط معالجة ثابت قواعد التحضير نفسها أثناء التدريب والاستخدام."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Seven-node raw-data-to-scaling pipeline."
+      ],
+      "methodology": [
+        "FINAL V2 reports zero missing values and zero duplicates before drop; categorical features are one-hot encoded and imputed by the pipeline."
+      ],
+      "why_this_method": [
+        "A fixed pipeline applies the same rules during training and inference."
+      ],
+      "oral_explanation_points": [
+        "Explain median and most-frequent imputation.",
+        "Explain one-hot encoding and validation."
+      ],
+      "likely_questions": [
+        "How are missing values handled?",
+        "Why use a pipeline?"
+      ],
+      "supported_answers": [
+        "Numeric values use median imputation and categorical values most-frequent imputation; the pipeline keeps transformations consistent."
+      ],
+      "warnings": [
+        "Do not claim missingness was ignored."
+      ]
+    },
+    {
+      "number": 10,
+      "title_en": "Outlier handling",
+      "title_ar": "معالجة القيم الشاذة",
+      "purpose": "Explain why extreme values were inspected but not deleted blindly.",
+      "visible_content": [
+        "title: Outlier handling",
+        "lead: Outlier detection is used to inspect values, not to delete students mechanically.",
+        "points: IQR analysis identified many extreme observations.",
+        "points: Older students, unusual unit counts and extreme but valid grades can be legitimate records.",
+        "points: Impossible values are treated as missing and validated before modeling.",
+        "points: Valid extreme observations remain in the dataset.",
+        "methods: Logistic Regression: RobustScaler",
+        "methods: Tree models: original numeric scale",
+        "why: RobustScaler uses the median and IQR, so it is less affected by extreme values; tree models do not require scaling."
+      ],
+      "visible_content_ar": [
+        "title: معالجة القيم الشاذة",
+        "lead: يُستخدم اكتشاف القيم الشاذة لفحص البيانات، وليس لحذف الطلاب آليًا.",
+        "points: كشف تحليل IQR عن عدد كبير من القيم المتطرفة.",
+        "points: قد تكون أعمار بعض الطلاب أو أعداد الوحدات أو الدرجات المتطرفة صحيحة.",
+        "points: تُعامل القيم المستحيلة كقيم مفقودة وتخضع للتحقق.",
+        "points: تبقى الملاحظات المتطرفة الصحيحة في البيانات.",
+        "methods: الانحدار اللوجستي: RobustScaler",
+        "methods: نماذج الأشجار: المقياس الرقمي الأصلي",
+        "why: يستخدم RobustScaler الوسيط وIQR، لذلك يتأثر بدرجة أقل بالقيم المتطرفة؛ ولا تحتاج نماذج الأشجار إلى القياس."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Outlier bullets and RobustScaler/tree-model choices."
+      ],
+      "methodology": [
+        "IQR detects unusual values; impossible values become missing; valid extremes remain. Logistic Regression uses RobustScaler; tree models keep numeric scale."
+      ],
+      "why_this_method": [
+        "Median/IQR scaling is less sensitive to valid extremes, while tree splits do not require scaling."
+      ],
+      "oral_explanation_points": [
+        "Give valid extreme examples.",
+        "Contrast RobustScaler with StandardScaler.",
+        "Explain why tree models do not need scaling."
+      ],
+      "likely_questions": [
+        "Why not remove all IQR outliers?",
+        "Which model receives RobustScaler?"
+      ],
+      "supported_answers": [
+        "IQR does not prove invalidity; only Logistic Regression uses RobustScaler in this design."
+      ],
+      "warnings": [
+        "Do not say all IQR outliers were deleted."
+      ]
+    },
+    {
+      "number": 11,
+      "title_en": "Class imbalance",
+      "title_ar": "عدم توازن الفئات",
+      "purpose": "Describe class imbalance and handling.",
+      "visible_content": [
+        "title: Class imbalance",
+        "lead: The resolved outcomes are not perfectly balanced, so the training objective accounts for class frequency.",
+        "handling: class_weight for Logistic Regression, Random Forest and Extra Trees",
+        "handling: scale_pos_weight for XGBoost",
+        "why: Class weighting preserves real student records while giving the positive Dropout class appropriate influence.",
+        "smote: SMOTE was not required: class weighting was sufficient and avoids creating synthetic student records."
+      ],
+      "visible_content_ar": [
+        "title: عدم توازن الفئات",
+        "lead: النتائج المحسومة ليست متوازنة تمامًا، لذلك يراعي التدريب تكرار الفئات.",
+        "handling: class_weight للانحدار اللوجستي وRandom Forest وExtra Trees",
+        "handling: scale_pos_weight لنموذج XGBoost",
+        "why: يحافظ وزن الفئات على سجلات الطلاب الحقيقية ويمنح فئة الانسحاب تأثيرًا مناسبًا.",
+        "smote: لم تكن SMOTE مطلوبة؛ كان وزن الفئات كافيًا وتجنب إنشاء سجلات طلاب اصطناعية."
+      ],
+      "metrics": [
+        {
+          "label": "Graduate",
+          "value": 2209
+        },
+        {
+          "label": "Dropout",
+          "value": 1421
+        },
+        {
+          "label": "scale_pos_weight",
+          "value": 1.5527472527472528
+        }
+      ],
+      "visuals": [
+        "Graduate/Dropout cards, bars, class-weight chips, and SMOTE note."
+      ],
+      "methodology": [
+        "Resolved counts are 2,209 Graduate and 1,421 Dropout; training counts are 1,413 and 910 with scale_pos_weight 1.5527472527472528."
+      ],
+      "why_this_method": [
+        "Class weighting preserves real records and gives Dropout suitable influence; SMOTE was not required."
+      ],
+      "oral_explanation_points": [
+        "Explain Dropout as the positive class.",
+        "Explain class_weight and scale_pos_weight.",
+        "Explain why synthetic records were avoided."
+      ],
+      "likely_questions": [
+        "Why not SMOTE?",
+        "What is scale_pos_weight?"
+      ],
+      "supported_answers": [
+        "Class weighting was sufficient and avoids synthetic student records; scale_pos_weight weights the positive class."
+      ],
+      "warnings": [
+        "Do not claim perfect balance or SMOTE usage."
+      ]
+    },
+    {
+      "number": 12,
+      "title_en": "Models evaluated",
+      "title_ar": "النماذج التي تم تقييمها",
+      "purpose": "Compare four candidate classifiers and cross-validated PR-AUC.",
+      "visible_content": [
+        "title: Models evaluated",
+        "lead: Four complementary classifiers were compared with the same evaluation design.",
+        "model_notes: Logistic Regression",
+        "model_notes: Simple, interpretable baseline",
+        "model_notes: Random Forest",
+        "model_notes: Non-linear ensemble",
+        "model_notes: Extra Trees",
+        "model_notes: High-randomness ensemble comparison",
+        "model_notes: XGBoost",
+        "model_notes: Gradient boosting model for tabular data",
+        "why: Comparing a linear baseline with three tree ensembles tests whether non-linear relationships improve early-warning performance.",
+        "XGBoost: CV PR-AUC 92.77%",
+        "Logistic Regression: CV PR-AUC 92.39%",
+        "Random Forest: CV PR-AUC 91.83%",
+        "Extra Trees: CV PR-AUC 89.60%",
+        "Selected model highlighted: XGBoost"
+      ],
+      "visible_content_ar": [
+        "title: النماذج التي تم تقييمها",
+        "lead: تمت مقارنة أربعة مصنفات متكاملة باستخدام تصميم التقييم نفسه.",
+        "model_notes: Logistic Regression",
+        "model_notes: خط أساس بسيط قابل للتفسير",
+        "model_notes: Random Forest",
+        "model_notes: تجميع غير خطي",
+        "model_notes: Extra Trees",
+        "model_notes: مقارنة بتجميع عالي العشوائية",
+        "model_notes: XGBoost",
+        "model_notes: تعزيز تدريجي للبيانات الجدولية",
+        "why: تختبر مقارنة خط أساس خطي مع ثلاثة نماذج أشجار ما إذا كانت العلاقات غير الخطية تحسن الإنذار المبكر.",
+        "XGBoost: CV PR-AUC 92.77%",
+        "Logistic Regression: CV PR-AUC 92.39%",
+        "Random Forest: CV PR-AUC 91.83%",
+        "Extra Trees: CV PR-AUC 89.60%",
+        "Selected model highlighted: XGBoost"
+      ],
+      "metrics": [
+        {
+          "model": "XGBoost",
+          "cv_pr_auc": 0.9276638343,
+          "selected": true
+        },
+        {
+          "model": "Logistic Regression",
+          "cv_pr_auc": 0.9238844665,
+          "selected": false
+        },
+        {
+          "model": "Random Forest",
+          "cv_pr_auc": 0.9182875735,
+          "selected": false
+        },
+        {
+          "model": "Extra Trees",
+          "cv_pr_auc": 0.8959963732,
+          "selected": false
+        }
+      ],
+      "visuals": [
+        "Horizontal Chart.js chart and four model-note cards; XGBoost highlighted."
+      ],
+      "methodology": [
+        "CV PR-AUC values come from final_v2_metrics.json."
+      ],
+      "why_this_method": [
+        "The comparison covers an interpretable baseline and complementary tree ensembles for nonlinear tabular data."
+      ],
+      "oral_explanation_points": [
+        "Explain the baseline.",
+        "Contrast ensemble families.",
+        "Point out evidence-based selection."
+      ],
+      "likely_questions": [
+        "Why include Logistic Regression?",
+        "Why include XGBoost?"
+      ],
+      "supported_answers": [
+        "Logistic Regression is a transparent baseline; XGBoost is a strong tabular candidate and had the strongest CV PR-AUC in this run."
+      ],
+      "warnings": [
+        "Do not say XGBoost is universally best."
+      ]
+    },
+    {
+      "number": 13,
+      "title_en": "Model selection and cross-validation",
+      "title_ar": "اختيار النموذج والتحقق المتقاطع",
+      "purpose": "Explain five-fold Stratified CV, PR-AUC selection, and the train/CV gap.",
+      "visible_content": [
+        "title: Model selection and cross-validation",
+        "lead: Model selection uses five-fold Stratified Cross-Validation on the resolved training population.",
+        "selection_metric: PR-AUC",
+        "points: Stratification preserves the Graduate/Dropout class distribution in each fold.",
+        "points: PR-AUC focuses on the positive Dropout class and is informative under class imbalance.",
+        "points: XGBoost achieved the strongest cross-validated PR-AUC and was selected.",
+        "note: There is a moderate Train-to-CV gap of approximately 5.9 percentage points, while validation and untouched test performance remain strong.",
+        "why: Stratified cross-validation preserves class proportions across folds; PR-AUC focuses evaluation on the positive Dropout class under class imbalance.",
+        "Train PR-AUC: 98.66%",
+        "CV PR-AUC: 92.77%",
+        "Train/CV gap: 5.90 percentage points",
+        "Selected model: XGBoost"
+      ],
+      "visible_content_ar": [
+        "title: اختيار النموذج والتحقق المتقاطع",
+        "lead: استخدم اختيار النموذج تحققًا متقاطعًا طبقيًا من خمس طيات على مجموعة التدريب المحسومة.",
+        "selection_metric: PR-AUC",
+        "points: يحافظ التقسيم الطبقي على توزيع فئتي التخرج والانسحاب في كل طية.",
+        "points: يركز PR-AUC على فئة الانسحاب الإيجابية ويُعد مناسبًا مع عدم توازن الفئات.",
+        "points: حقق XGBoost أقوى PR-AUC متقاطع وتم اختياره.",
+        "why: يقدر التحقق الطبقي التعميم مع الحفاظ على نسب الفئات؛ ويركز PR-AUC على الفئة التي تحتاج إلى دعم مبكر.",
+        "Train PR-AUC: 98.66%",
+        "CV PR-AUC: 92.77%",
+        "Train/CV gap: 5.90 percentage points",
+        "Selected model: XGBoost"
+      ],
+      "metrics": [
+        {
+          "label": "Selected model",
+          "value": "XGBoost"
+        },
+        {
+          "label": "Train PR-AUC",
+          "value": 0.9866443336008119
+        },
+        {
+          "label": "CV PR-AUC",
+          "value": 0.9276638343041993
+        },
+        {
+          "label": "Train/CV gap",
+          "value": 0.05898049929661264
+        }
+      ],
+      "visuals": [
+        "Selection cards, grouped train/CV chart, and rationale bullets."
+      ],
+      "methodology": [
+        "Five-fold Stratified Cross-Validation; PR-AUC is primary selection metric; all four models are shown."
+      ],
+      "why_this_method": [
+        "Stratification preserves class proportions; PR-AUC focuses Dropout; XGBoost had the strongest CV PR-AUC."
+      ],
+      "oral_explanation_points": [
+        "Read Train 98.66%, CV 92.77%, gap 5.90 percentage points.",
+        "Use moderate-gap wording.",
+        "Explain strong untouched-test evidence."
+      ],
+      "likely_questions": [
+        "Why PR-AUC instead of accuracy?",
+        "Does the gap prove overfitting?"
+      ],
+      "supported_answers": [
+        "PR-AUC focuses precision/recall for the positive class; the moderate gap is monitored while CV and test performance remain strong."
+      ],
+      "warnings": [
+        "Do not call the gap negligible."
+      ]
+    },
+    {
+      "number": 14,
+      "title_en": "Probability calibration and threshold",
+      "title_ar": "معايرة الاحتمالات والحدود",
+      "purpose": "Explain isotonic calibration, thresholds, and human review.",
+      "visible_content": [
+        "title: Probability calibration and threshold",
+        "lead: The selected model is calibrated so the displayed score is easier to interpret as estimated risk.",
+        "calibrator: Isotonic Regression",
+        "points: High-risk threshold: selected to meet a minimum target Recall of 85%.",
+        "points: Medium-risk threshold: 30%.",
+        "points: Human-review margin: ±8 percentage points around the high-risk threshold.",
+        "why: Calibration improves the interpretation of probabilities; threshold tuning makes the early-warning system sensitive to the positive class.",
+        "High-risk threshold: 48.15%",
+        "Medium-risk threshold: 30.00%",
+        "Review margin: ±8.00%"
+      ],
+      "visible_content_ar": [
+        "title: معايرة الاحتمالات والحدود",
+        "lead: تمت معايرة النموذج المختار ليكون تفسير الدرجة المعروضة أقرب إلى المخاطر المقدّرة.",
+        "calibrator: Isotonic Regression",
+        "points: حد المخاطر المرتفعة: اختير لتحقيق حد أدنى للاستدعاء قدره 85٪.",
+        "points: حد المخاطر المتوسطة: 30٪.",
+        "points: هامش المراجعة البشرية: ±8 نقاط مئوية حول حد المخاطر المرتفعة.",
+        "why: تحسن المعايرة تفسير الاحتمالات؛ ويجعل ضبط العتبة النظام أكثر حساسية للفئة الإيجابية.",
+        "High-risk threshold: 48.15%",
+        "Medium-risk threshold: 30.00%",
+        "Review margin: ±8.00%"
+      ],
+      "metrics": [
+        {
+          "label": "High threshold",
+          "value": 0.48148149251937866
+        },
+        {
+          "label": "Medium threshold",
+          "value": 0.3
+        },
+        {
+          "label": "Review margin",
+          "value": 0.08
+        }
+      ],
+      "visuals": [
+        "Isotonic label, threshold scale, cards, and bullets."
+      ],
+      "methodology": [
+        "High threshold 0.48148149251937866; medium threshold 0.3; review margin 0.08."
+      ],
+      "why_this_method": [
+        "Isotonic Regression makes scores more interpretable as estimated probabilities; high threshold tuning targeted minimum Recall 85%."
+      ],
+      "oral_explanation_points": [
+        "Explain calibration as probability interpretation.",
+        "Explain bands and separate review margin."
+      ],
+      "likely_questions": [
+        "Why Isotonic Regression?",
+        "How was high threshold chosen?"
+      ],
+      "supported_answers": [
+        "It calibrates raw scores; threshold tuning targeted minimum Recall 85% and exported 0.48148149251937866."
+      ],
+      "warnings": [
+        "48.15% remains estimated risk, not certainty."
+      ]
+    },
+    {
+      "number": 15,
+      "title_en": "Final test results",
+      "title_ar": "النتائج النهائية للاختبار",
+      "purpose": "Present final untouched-test metrics and emphasize Recall.",
+      "visible_content": [
+        "title: Final test results",
+        "lead: These values come from the untouched FINAL V2 test split after model selection and calibration.",
+        "why: Recall is emphasized because missing a student who may need support can be more costly than reviewing additional false-positive cases.",
+        "Accuracy: 86.91%",
+        "Precision: 78.21%",
+        "Recall: 92.25%",
+        "F1: 84.65%",
+        "PR-AUC: 93.78%",
+        "ROC-AUC: 95.31%",
+        "Brier Score: 0.07753758132457733"
+      ],
+      "visible_content_ar": [
+        "title: النتائج النهائية للاختبار",
+        "lead: تأتي هذه القيم من مجموعة اختبار FINAL V2 غير المستخدمة بعد اختيار النموذج والمعايرة.",
+        "why: يحظى الاستدعاء باهتمام خاص لأن تفويت طالب قد يحتاج إلى الدعم قد يكون أكثر تكلفة من مراجعة حالات إيجابية كاذبة إضافية.",
+        "Accuracy: 86.91%",
+        "Precision: 78.21%",
+        "Recall: 92.25%",
+        "F1: 84.65%",
+        "PR-AUC: 93.78%",
+        "ROC-AUC: 95.31%",
+        "Brier Score: 0.07753758132457733"
+      ],
+      "metrics": [
+        {
+          "label": "Accuracy",
+          "value": 0.8691460055096418
+        },
+        {
+          "label": "Precision",
+          "value": 0.7820895522388059
+        },
+        {
+          "label": "Recall",
+          "value": 0.9225352112676056
+        },
+        {
+          "label": "F1",
+          "value": 0.8465266558966075
+        },
+        {
+          "label": "PR-AUC",
+          "value": 0.9377955609524928
+        },
+        {
+          "label": "ROC-AUC",
+          "value": 0.9531180294436301
+        },
+        {
+          "label": "Brier Score",
+          "value": 0.07753758132457733
+        }
+      ],
+      "visuals": [
+        "Seven metric cards with Recall emphasized."
+      ],
+      "methodology": [
+        "Values are from the untouched FINAL V2 test split after selection and calibration."
+      ],
+      "why_this_method": [
+        "Missing an at-risk student can cost more than reviewing additional false positives."
+      ],
+      "oral_explanation_points": [
+        "Read all metrics.",
+        "Explain Brier Score as probabilistic squared-error quality.",
+        "State these are test values."
+      ],
+      "likely_questions": [
+        "What does Brier Score mean?",
+        "Why is Recall important?"
+      ],
+      "supported_answers": [
+        "Brier Score summarizes probability error; the executed value is 0.07753758132457733. Recall is central to early warning."
+      ],
+      "warnings": [
+        "Do not present Brier as accuracy or claim perfection."
+      ]
+    },
+    {
+      "number": 16,
+      "title_en": "Model evaluation",
+      "title_ar": "تقييم النموذج",
+      "purpose": "Show confusion-matrix, ranking, calibration, and confidence-interval evidence.",
+      "visible_content": [
+        "title: Model evaluation",
+        "lead: The final test probabilities were evaluated with threshold, ranking and calibration views.",
+        "labels: Confusion Matrix",
+        "labels: ROC Curve",
+        "labels: Precision–Recall Curve",
+        "labels: Calibration Curve",
+        "labels: 95% Confidence Intervals",
+        "interpretation: The stored curves and intervals are derived from the executed FINAL V2 run; no curve points are invented for the presentation.",
+        "Confusion matrix: [[369, 73], [22, 262]]",
+        "PR-AUC 95% CI: 0.9161018266–0.9555469419",
+        "ROC-AUC 95% CI: 0.9359615383–0.9684400573",
+        "Recall 95% CI: 0.8892757937–0.9555612245",
+        "Precision 95% CI: 0.7380240667–0.8272782406",
+        "F1 95% CI: 0.8148148148–0.8760488981"
+      ],
+      "visible_content_ar": [
+        "title: تقييم النموذج",
+        "lead: تم تقييم احتمالات الاختبار النهائية باستخدام مصفوفة الالتباس ومنحنيات الترتيب والمعايرة.",
+        "labels: مصفوفة الالتباس",
+        "labels: منحنى ROC",
+        "labels: منحنى Precision–Recall",
+        "labels: منحنى المعايرة",
+        "labels: فواصل الثقة 95٪",
+        "interpretation: تم اشتقاق المنحنيات والفواصل المخزنة من تشغيل FINAL V2 الفعلي؛ ولم تتم إضافة نقاط منحنيات مختلقة.",
+        "Confusion matrix: [[369, 73], [22, 262]]",
+        "PR-AUC 95% CI: 0.9161018266–0.9555469419",
+        "ROC-AUC 95% CI: 0.9359615383–0.9684400573",
+        "Recall 95% CI: 0.8892757937–0.9555612245",
+        "Precision 95% CI: 0.7380240667–0.8272782406",
+        "F1 95% CI: 0.8148148148–0.8760488981"
+      ],
+      "metrics": [
+        {
+          "label": "Confusion matrix",
+          "value": [
+            [
+              369,
+              73
+            ],
+            [
+              22,
+              262
+            ]
+          ]
+        },
+        {
+          "label": "PR-AUC",
+          "estimate": 0.9385347632,
+          "95% CI low": 0.9161018266,
+          "95% CI high": 0.9555469419
+        },
+        {
+          "label": "ROC-AUC",
+          "estimate": 0.9536915262,
+          "95% CI low": 0.9359615383,
+          "95% CI high": 0.9684400573
+        },
+        {
+          "label": "Recall",
+          "estimate": 0.923351306,
+          "95% CI low": 0.8892757937,
+          "95% CI high": 0.9555612245
+        },
+        {
+          "label": "Precision",
+          "estimate": 0.782234957,
+          "95% CI low": 0.7380240667,
+          "95% CI high": 0.8272782406
+        },
+        {
+          "label": "F1",
+          "estimate": 0.8470974885,
+          "95% CI low": 0.8148148148,
+          "95% CI high": 0.8760488981
+        }
+      ],
+      "visuals": [
+        "Confusion cards, 95% CI rows, and stored ROC, PR, and calibration curves."
+      ],
+      "methodology": [
+        "Charts use actual curve arrays in final_v2_metrics.json; no points are invented."
+      ],
+      "why_this_method": [
+        "Multiple views separate classification errors, ranking quality, and probability reliability."
+      ],
+      "oral_explanation_points": [
+        "Explain each matrix cell.",
+        "Explain ROC-AUC versus PR-AUC.",
+        "Explain confidence intervals."
+      ],
+      "likely_questions": [
+        "What does the matrix show?",
+        "How do ROC-AUC and PR-AUC differ?"
+      ],
+      "supported_answers": [
+        "The matrix is [[369, 73], [22, 262]]. ROC-AUC summarizes both classes; PR-AUC focuses the positive Dropout class."
+      ],
+      "warnings": [
+        "AUC is not threshold-specific accuracy or causal evidence."
+      ]
+    },
+    {
+      "number": 17,
+      "title_en": "Feature importance and explainability",
+      "title_ar": "أهمية الخصائص وقابلية التفسير",
+      "purpose": "Distinguish global feature importance from SHAP contribution.",
+      "visible_content": [
+        "title: Feature importance and explainability",
+        "lead: Global importance and local contribution answer different questions about the model.",
+        "definitions: Permutation Importance",
+        "definitions: Global effect on model performance when a feature is shuffled.",
+        "definitions: SHAP",
+        "definitions: Contribution of features to an individual or global prediction.",
+        "definitions: Caution",
+        "definitions: A model contribution does not prove causation.",
+        "features: Curricular units 1st sem (approved)",
+        "features: Curricular units 1st sem (enrolled)",
+        "features: Tuition fees up to date",
+        "features: Course",
+        "features: Curricular units 1st sem (grade)",
+        "features: Scholarship holder",
+        "features: Debtor",
+        "why: Using both global and local explanations helps an advisor understand model behavior without presenting it as a causal finding."
+      ],
+      "visible_content_ar": [
+        "title: أهمية الخصائص وقابلية التفسير",
+        "lead: تجيب الأهمية العامة والمساهمة المحلية عن سؤالين مختلفين حول سلوك النموذج.",
+        "definitions: Permutation Importance",
+        "definitions: الأثر العام على أداء النموذج عند تبديل قيم الخاصية.",
+        "definitions: SHAP",
+        "definitions: مساهمة الخصائص في تنبؤ فردي أو في النموذج عمومًا.",
+        "definitions: تنبيه",
+        "definitions: مساهمة النموذج لا تثبت علاقة سببية.",
+        "features: الوحدات المجتازة في الفصل الأول",
+        "features: الوحدات المسجلة في الفصل الأول",
+        "features: انتظام المصروفات الدراسية",
+        "features: التخصص",
+        "features: درجة الفصل الأول",
+        "features: الحصول على منحة",
+        "features: وجود مستحقات مالية",
+        "why: يساعد الجمع بين التفسير العام والمحلي المرشد على فهم سلوك النموذج دون عرضه كاكتشاف سببي."
+      ],
+      "metrics": [
+        {
+          "type": "Permutation Importance",
+          "feature": "Curricular units 1st sem (approved)",
+          "value": 0.2852187992
+        },
+        {
+          "type": "Permutation Importance",
+          "feature": "Curricular units 1st sem (enrolled)",
+          "value": 0.042846897
+        },
+        {
+          "type": "Permutation Importance",
+          "feature": "Tuition fees up to date",
+          "value": 0.031834553
+        },
+        {
+          "type": "Permutation Importance",
+          "feature": "Course",
+          "value": 0.0149714717
+        },
+        {
+          "type": "Permutation Importance",
+          "feature": "Scholarship holder",
+          "value": 0.0051729909
+        },
+        {
+          "type": "SHAP Mean |SHAP|",
+          "feature": "Curricular units 1st sem (approved)",
+          "value": 1.6268441677
+        },
+        {
+          "type": "SHAP Mean |SHAP|",
+          "feature": "Tuition fees up to date",
+          "value": 0.4464859068
+        },
+        {
+          "type": "SHAP Mean |SHAP|",
+          "feature": "Curricular units 1st sem (grade)",
+          "value": 0.3937901855
+        },
+        {
+          "type": "SHAP Mean |SHAP|",
+          "feature": "Course",
+          "value": 0.3803649247
+        },
+        {
+          "type": "SHAP Mean |SHAP|",
+          "feature": "Curricular units 1st sem (enrolled)",
+          "value": 0.3502492309
+        }
+      ],
+      "visuals": [
+        "Definition cards, top-five permutation bars, top-five SHAP bars, and feature note."
+      ],
+      "methodology": [
+        "Permutation and SHAP summaries come from final_v2_metrics.json; Flask computes Tree SHAP for individual inputs."
+      ],
+      "why_this_method": [
+        "The views show global sensitivity and contribution without causal claims."
+      ],
+      "oral_explanation_points": [
+        "Explain shuffling for permutation importance.",
+        "Explain SHAP contribution.",
+        "Mention leading features and individual direction."
+      ],
+      "likely_questions": [
+        "Feature importance versus SHAP?",
+        "Does SHAP prove causation?"
+      ],
+      "supported_answers": [
+        "Permutation measures performance change after shuffling; SHAP attributes contribution. Neither proves causation."
+      ],
+      "warnings": [
+        "Do not say a feature caused dropout."
+      ]
+    },
+    {
+      "number": 18,
+      "title_en": "Risk scoring current students",
+      "title_ar": "تقييم مخاطر الطلاب المقيدين حاليًا",
+      "purpose": "Report calibrated risk bands for the current Enrolled cohort.",
+      "visible_content": [
+        "title: Risk scoring current students",
+        "lead: The trained model scores the current Enrolled cohort after supervised training is complete.",
+        "note: The Medium-risk band exists, but no student in this scored cohort falls inside that calibrated probability interval. This is a cohort result, not a system error.",
+        "Enrolled: 794",
+        "Low: 309",
+        "Medium: 0",
+        "High: 485",
+        "Human Review: 140"
+      ],
+      "visible_content_ar": [
+        "title: تقييم مخاطر الطلاب المقيدين حاليًا",
+        "lead: يقيّم النموذج المدرب مجموعة الطلاب المقيدين بعد اكتمال التدريب الخاضع للإشراف.",
+        "note: توجد فئة المخاطر المتوسطة في النظام، لكن لا يقع أي طالب في هذه المجموعة داخل مجال الاحتمال المعاير لها. هذه نتيجة للمجموعة وليست خطأ في النظام.",
+        "Enrolled: 794",
+        "Low: 309",
+        "Medium: 0",
+        "High: 485",
+        "Human Review: 140"
+      ],
+      "metrics": [
+        {
+          "label": "Enrolled",
+          "value": 794
+        },
+        {
+          "label": "Low",
+          "value": 309
+        },
+        {
+          "label": "Medium",
+          "value": 0
+        },
+        {
+          "label": "High",
+          "value": 485
+        },
+        {
+          "label": "Human Review",
+          "value": 140
+        }
+      ],
+      "visuals": [
+        "Four cards, risk bars, review count, and Medium=0 note."
+      ],
+      "methodology": [
+        "Counts are actual FINAL V2 Enrolled scoring results."
+      ],
+      "why_this_method": [
+        "Scoring Enrolled after training gives a current review population without inventing resolved labels."
+      ],
+      "oral_explanation_points": [
+        "Read 794 total, 309 Low, 0 Medium, 485 High, 140 review.",
+        "Explain Medium=0 as a cohort result.",
+        "Explain review can overlap bands."
+      ],
+      "likely_questions": [
+        "Why is Medium zero?",
+        "Does High mean dropout?"
+      ],
+      "supported_answers": [
+        "No current score falls inside Medium; High is an estimated prioritization band, not a certain outcome."
+      ],
+      "warnings": [
+        "Do not call High students confirmed dropouts."
+      ]
+    },
+    {
+      "number": 19,
+      "title_en": "Advisor recommendation engine",
+      "title_ar": "محرك توصيات المرشد الأكاديمي",
+      "purpose": "Show how risk and explanations become advisor recommendations.",
+      "visible_content": [
+        "title: Advisor recommendation engine",
+        "lead: EduGuard connects the risk estimate to observable, actionable academic and financial signals.",
+        "steps: Risk score",
+        "steps: Explanation",
+        "steps: Actionable signals",
+        "steps: Advisor recommendation",
+        "actions: Targeted tutoring",
+        "actions: Advisor meeting",
+        "actions: Missed-assessment review",
+        "actions: Financial support",
+        "actions: Payment-plan review",
+        "note: Sensitive characteristics are not used as intervention reasons."
+      ],
+      "visible_content_ar": [
+        "title: محرك توصيات المرشد الأكاديمي",
+        "lead: يربط EduGuard تقدير المخاطر بإشارات أكاديمية ومالية قابلة للتدخل.",
+        "steps: درجة المخاطر",
+        "steps: التفسير",
+        "steps: الإشارات القابلة للتدخل",
+        "steps: توصية المرشد",
+        "actions: دعم دراسي موجه",
+        "actions: اجتماع مع المرشد",
+        "actions: مراجعة التقييمات الفائتة",
+        "actions: دعم مالي",
+        "actions: مراجعة خطة السداد",
+        "note: لا تستخدم الخصائص الحساسة كأسباب للتدخل."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Four-step flow and five action chips."
+      ],
+      "methodology": [
+        "Recommendations are generated by rule-based recommendations() from Semester-1 academic and financial signals."
+      ],
+      "why_this_method": [
+        "Transparent rules keep actions traceable and separate from model probability."
+      ],
+      "oral_explanation_points": [
+        "Give examples: low approval, low grade, missed evaluations, arrears, debtor, scholarship eligibility.",
+        "Emphasize supportive action.",
+        "Sensitive characteristics are not intervention reasons."
+      ],
+      "likely_questions": [
+        "Why rules?",
+        "What triggers financial support?"
+      ],
+      "supported_answers": [
+        "The service maps observable signals to transparent actions; tuition/debtor/scholarship status can trigger support guidance."
+      ],
+      "warnings": [
+        "Recommendations are not mandatory or causal findings."
+      ]
+    },
+    {
+      "number": 20,
+      "title_en": "Complete system and conclusion",
+      "title_ar": "النظام الكامل والخلاصة",
+      "purpose": "Close with the full platform flow and academic conclusion.",
+      "visible_content": [
+        "title: Complete system and conclusion",
+        "lead: The result is an end-to-end academic decision-support workflow.",
+        "system: Dataset",
+        "system: ML model",
+        "system: Calibrated risk",
+        "system: SHAP explanation",
+        "system: Advisor recommendations",
+        "system: Flask application",
+        "system: Dashboard / reports / bulk upload",
+        "conclusion: EduGuard demonstrates that information available by the end of Semester 1 can provide a strong early-warning signal for student dropout risk.",
+        "closing: Earlier detection. Explainable estimates. Actionable advisor support."
+      ],
+      "visible_content_ar": [
+        "title: النظام الكامل والخلاصة",
+        "lead: النتيجة هي سير عمل متكامل لدعم القرار الأكاديمي.",
+        "system: البيانات",
+        "system: نموذج تعلم الآلة",
+        "system: المخاطر المعايرة",
+        "system: تفسير SHAP",
+        "system: توصيات المرشد",
+        "system: تطبيق Flask",
+        "system: لوحة التحكم والتقارير والرفع الجماعي",
+        "conclusion: يوضح EduGuard أن المعلومات المتاحة حتى نهاية الفصل الدراسي الأول يمكن أن تقدم إشارة إنذار مبكر قوية لمخاطر انسحاب الطلاب.",
+        "closing: اكتشاف أبكر. تقديرات قابلة للتفسير. دعم عملي للمرشد."
+      ],
+      "metrics": [],
+      "visuals": [
+        "Seven-node flow from Dataset to Flask and dashboard/reports/bulk upload."
+      ],
+      "methodology": [
+        "The slide combines current Flask routes, artifacts, explanations, recommendations, and reporting."
+      ],
+      "why_this_method": [
+        "The end-to-end path shows how validated evidence becomes a usable advisor tool."
+      ],
+      "oral_explanation_points": [
+        "Walk from data to artifact to Flask pages.",
+        "Re-state human judgment.",
+        "Summarize detection, calibration, explanation, and action."
+      ],
+      "likely_questions": [
+        "What is the contribution?",
+        "What is needed before deployment?"
+      ],
+      "supported_answers": [
+        "The project demonstrates a Semester-1 early-warning workflow connected to an explainable Flask application; institutional validation and governance remain necessary."
+      ],
+      "warnings": [
+        "Do not claim universal generalization or autonomous decisions."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "captured_at_utc": "2026-09-16T07:24:23.035799+00:00",
+  "files": [
+    {
+      "path": "models/student_dropout_flask_bundle.pkl",
+      "sha256": "7E43E3E683C3FBC7B5B88AE83059574F1A563BD02BF611CE56F3CDB06F387AD9",
+      "matches_before": true
+    },
+    {
+      "path": "models/student_risk_model.pkl",
+      "sha256": "959E765F0203A28D84BAB6795B51C1D9D85CE80367F497CBB3ED5DB5ECF8C096",
+      "matches_before": true
+    },
+    {
+      "path": "models/probability_calibrator.pkl",
+      "sha256": "7DD7BDBA4A2ABDDAC7B9B0DDD07A03011DDFB732C177CB5801BBF6E6AC4782DB",
+      "matches_before": true
+    },
+    {
+      "path": "models/model_metadata.json",
+      "sha256": "8E2C744E5524B3B6277ED797860B8DED7E036F7582A13FD46FDB3A6246DFE95D",
+      "matches_before": true
+    },
+    {
+      "path": "data/raw/data.csv",
+      "sha256": "19737F02127E85EF29AF536E46888A7721B6C530C3E1C6AEDFBB09109C030A71",
+      "matches_before": true
+    },
+    {
+      "path": "artifacts/enrolled_students_risk_scores.csv",
+      "sha256": "BD830AB97F4A1D0316EAA143F7DBCFB56DB9F76FA4A9F837BB8065E1761E323D",
+      "matches_before": true
+    },
+    {
+      "path": "instance/eduguard.db",
+      "sha256": "BB8BFF45E5AE56D54723607145CA31AF41679A00130326FDA01E0BFDC3A93595",
+      "matches_before": true
+    },
+    {
+      "path": "notebooks/NTI_Student_Dropout_FINAL_V2.ipynb",
+      "sha256": "1E4AF0A91424AA826DD6FFD3BFDCEE1252F5629B199BBA23A2B0D9B4667784F7",
+      "matches_before": true
+    },
+    {
+      "path": "services/presentation_service.py",
+      "sha256": "1195A79D521B0402931A75706209FA205D5D3B73BE49C72D6E1A86636ECA106B",
+      "matches_before": true
+    },
+    {
+      "path": "templates/powerpoint.html",
+      "sha256": "D409A21B3C40610A8CF872155DA8B1F3D489F52C8B66E650880A58283AFEC00B",
+      "matches_before": true
+    },
+    {
+      "path": "static/css/powerpoint.css",
+      "sha256": "D2FF6653BE686CE33E6D5843F9031367F5106F1A2F4E69A2D3AE58731C639107",
+      "matches_before": true
+    },
+    {
+      "path": "static/js/powerpoint.js",
+      "sha256": "CFC60B488941CC1EAD4ADED097B6F1CB91548598A30F47C0A17E12ED637564D3",
+      "matches_before": true
+    }
+  ],
+  "all_critical_hashes_match": true
+}

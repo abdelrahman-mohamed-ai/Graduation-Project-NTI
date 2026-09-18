@@ -1,0 +1,24 @@
+# Prepared configuration only. Creating this service incurs hosting/disk charges.
+services:
+  - type: web
+    name: eduguard-ai
+    runtime: python
+    plan: standard
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn --config gunicorn.conf.py 'app:create_app()'
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.16
+      - key: EDUGUARD_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+      - key: EDUGUARD_DATABASE_PATH
+        value: /var/data/eduguard.db
+      - key: EDUGUARD_SEED_DATABASE
+        value: "true"
+    disk:
+      name: eduguard-data
+      mountPath: /var/data
+      sizeGB: 1
