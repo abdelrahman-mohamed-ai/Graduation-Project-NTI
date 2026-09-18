@@ -72,7 +72,7 @@ project NTI/
 
 `data/processed/` is reserved; no extra cleaned dataset was invented. Notebook file paths locate the project root whether the notebook is opened from the root or `notebooks/`. Running the notebook's training/export cells is optional and overwrites exported artifacts intentionally; no notebook cells were run during cleanup. The current app stores upload batches in SQLite, not in `uploads/`.
 
-Production from the project root: `gunicorn --config gunicorn.conf.py 'app:create_app()'`. The Render entry point and frontend asset URLs are unchanged. See [deployment preparation](DEPLOYMENT.md).
+Production from the project root: `gunicorn --config gunicorn.conf.py 'app:create_app()'`. Railway uses this Gunicorn entry point and the existing relative frontend asset URLs. See [deployment preparation](DEPLOYMENT.md) for the SQLite and hosting boundary.
 
 ## Installation
 
@@ -116,7 +116,7 @@ Use **http://127.0.0.1:5000** for the local demo. It is served by Waitress and c
 
 ## Public Demo
 
-The Render public URL will be added here after the first verified deployment. The free web service is independent of the laptop and can be reached from phones or other computers. Render may introduce a cold-start delay after inactivity, and SQLite data on the free service is temporary across restarts, redeploys, and spin-downs.
+The live Railway public demo is **https://eduguard-ai-production-6669.up.railway.app**. It is independent of the laptop and can be reached from phones or other computers. Railway's Trial/free resources are time- and usage-limited; the service may stop when included credits are exhausted, and SQLite data is not a durable production database unless a supported persistent volume is active.
 
 ## Problem
 
@@ -297,7 +297,7 @@ See [final project audit](docs/FINAL_PROJECT_AUDIT.md), [PowerPoint slide report
 
 ## Limitations
 
-- This is a complete **local graduation-project application**, without authentication, role-based authorization or encryption at rest. Render/Gunicorn deployment preparation is documented in `DEPLOYMENT.md`. The advisor profile is explicitly a placeholder. Add these controls and appropriate institutional data governance before using real confidential records or exposing it beyond localhost.
+- This is a complete **graduation-project application**, without authentication, role-based authorization or encryption at rest. Railway/Gunicorn deployment preparation and the SQLite boundary are documented in `DEPLOYMENT.md`. The advisor profile is explicitly a placeholder. Add these controls and appropriate institutional data governance before using real confidential records or exposing it beyond localhost.
 - The dataset comes from one higher-education context. Validate/retrain on institutional historical data, monitor calibration and drift, and evaluate fairness across demographic groups before deployment.
 - Evaluation metrics are absent from `models/model_metadata.json`; the Model Insights page says “Not available in exported metadata.” No metrics are invented or recomputed on training data.
 - Enrollment-stage modeling is discussed in the notebook and educational pages; only the exported Semester-1 model is exposed for operational predictions.
